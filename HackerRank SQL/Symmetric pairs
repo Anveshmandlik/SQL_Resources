@@ -1,0 +1,13 @@
+Two pairs (X1, Y1) and (X2, Y2) are said to be symmetric pairs if X1 = Y2 and X2 = Y1.
+Write a query to output all such symmetric pairs in ascending order by the value of X. List the rows such that X1 ≤ Y1.
+
+[SOLUTION:]
+
+SELECT a.X, a.Y
+FROM Functions a
+JOIN Functions b ON a.X = b.Y and b.X = a.Y
+GROUP BY a.X, a.Y HAVING COUNT(a.X)>1 or a.X < a.Y
+ORDER BY a.X;
+
+
+
