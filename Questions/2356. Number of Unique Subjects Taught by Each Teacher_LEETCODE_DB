@@ -1,0 +1,14 @@
+Table: Teacher
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| teacher_id  | int  |
+| subject_id  | int  |
+| dept_id     | int  |
++-------------+------+
+Calculate the number of unique subjects each teacher teaches in the university.
+
+[SOLUTION]:
+
+SELECT teacher_id, COUNT(DISTINCT subject_id) as cnt 
+FROM Teacher GROUP BY teacher_id
