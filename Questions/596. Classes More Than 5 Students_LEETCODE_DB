@@ -1,0 +1,13 @@
+Table: Courses
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| student     | varchar |
+| class       | varchar |
+
+Find all the classes that have at least five students.
+[SOLUTION]:
+
+SELECT class FROM Courses GROUP BY class
+HAVING COUNT( DISTINCT student) >= 5 
